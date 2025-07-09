@@ -1,0 +1,30 @@
+{
+  "name": "lensbender",
+  "version": "1.0.0",
+  "description": "3D Optics Simulator and Lens System Design Tool",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skaramicke/lensbender.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/skaramicke/lensbender/issues"
+  },
+  "homepage": "https://github.com/skaramicke/lensbender#readme",
+  "dependencies": {
+    "babylonjs": "^8.15.1",
+    "babylonjs-loaders": "^8.15.1"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}
