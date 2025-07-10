@@ -39,7 +39,7 @@ interface ApertureSpec {
   mechanicalDiameter?: number; // Physical housing diameter
 }
 
-interface GlassSpec {
+export interface GlassSpec {
   catalog: string; // 'Schott', 'Ohara', 'Hoya', etc.
   glassCode: string; // 'N-BK7', 'SF11', etc.
   nd: number; // Refractive index at d-line (587.6nm)

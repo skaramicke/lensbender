@@ -16,9 +16,9 @@ const scene = new Scene(engine);
 // camera
 const camera = new ArcRotateCamera(
   "camera",
+  Math.PI / 2.5,
   Math.PI / 4,
-  Math.PI / 4,
-  500,
+  200,
   Vector3.Zero(),
   scene
 );
@@ -33,10 +33,10 @@ const entities: SceneEntity[] = [];
 
 // add sensor example
 const sensorConfig: SensorConfig = {
-  pixelWidth: 24, // Reduced for faster ray tracing during development
-  pixelHeight: 12,
-  size: { width: 24, height: 12 },
-  position: new Vector3(0, 0, 30),
+  pixelWidth: 320, // Reduced for faster ray tracing during development
+  pixelHeight: 240,
+  size: { width: 64, height: 48 },
+  position: new Vector3(0, 0, 0),
   rotation: new Vector3(0, 0, 0),
 };
 
