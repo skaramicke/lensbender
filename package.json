@@ -25,6 +25,7 @@
     "babylonjs-loaders": "^8.15.1"
   },
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-glsl": "^1.5.1"
   }
 }
