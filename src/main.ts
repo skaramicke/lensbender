@@ -4,6 +4,7 @@ import {
   ArcRotateCamera,
   Vector3,
   HemisphericLight,
+  Color3,
 } from "babylonjs";
 
 import { SceneEntity, Sensor, SensorConfig, Sphere } from "./objects";
@@ -41,7 +42,8 @@ const sensorConfig: SensorConfig = {
 };
 
 // Add a sphere at a distance
-entities.push(new Sphere(50, new Vector3(0, 0, -160)));
+entities.push(new Sphere(25, new Vector3(-10, 0, -160), new Color3(0, 1, 0)));
+entities.push(new Sphere(25, new Vector3(10, 0, -160), new Color3(0, 0, 1)));
 
 // Add a test lens with realistic BK7 parameters
 const lens = new Lens({
