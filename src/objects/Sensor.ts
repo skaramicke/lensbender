@@ -210,7 +210,7 @@ vec3 traceRays(vec3 origin, vec3 centerDirection) {
     vec3 finalColor = vec3(0.0);
     vec3 direction = normalize(centerDirection);
     
-    int directionCount = 5000; // Number of rays to trace
+    int directionCount = 500; // Number of rays to trace
     if (uNumObjects == 0) {
         // If no objects, return a default color
         return vec3(0.1, 0.1, 0.15);
