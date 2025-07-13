@@ -1,19 +1,18 @@
 // src/objects/Sensor.ts
 import {
-  Scene,
+  Engine,
+  Mesh,
   MeshBuilder,
   RawTexture,
-  Texture,
-  Engine,
+  Scene,
   ShaderMaterial,
-  Mesh,
-  Vector3,
+  Texture,
   Vector2,
+  Vector3
 } from "babylonjs";
 
+import { GlassSpec, Lens } from "./Lens";
 import { SceneEntity } from "./SceneObject";
-import { Lens } from "./Lens";
-import { GlassSpec } from "./Lens"; // Assuming interfaces are exported from Lens.ts
 
 export type SensorConfig = {
   pixelWidth: number;
