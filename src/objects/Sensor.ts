@@ -206,6 +206,37 @@ vec3 traceRay(vec3 origin, vec3 direction) {
     return finalColor;
 }
 
+vec3 traceRays(vec3 origin, vec3 centerDirection) {
+    vec3 finalColor = vec3(0.0);
+    vec3 direction = normalize(centerDirection);
+    
+    int directionCount = 5000; // Number of rays to trace
+    if (uNumObjects == 0) {
+        // If no objects, return a default color
+        return vec3(0.1, 0.1, 0.15);
+    }
+
+    // Trace 100 random rays in a cone around the center direction
+    for (int i = 0; i < directionCount; ++i) {
+        // Generate a random direction in a cone around the center direction
+        float theta = float(i) * 0.062831853; // 2* PI / directionCount
+        float phi = float(i) * 0.031415926; // PI / directionCount
+        float r = 0.1; // Radius of the cone
+        vec3 randomDir = vec3(
+            r * cos(theta) * sin(phi),
+            r * sin(theta) * sin(phi),
+            r * cos(phi)
+        );
+        // Normalize and adjust the direction
+        randomDir = normalize(randomDir + direction);
+        finalColor += traceRay(origin, randomDir);
+    }
+    // Average the color from all rays
+    finalColor /= float(directionCount);
+
+    return finalColor;
+}
+
 void main(){
     // Get the current pixel coordinate based on uPixelCount (this creates the binning effect)
     vec2 pixelCoord = floor(vUV * uPixelCount);
@@ -219,7 +250,7 @@ void main(){
     vec3 direction = normalize(uSensorForward);
     
     // Trace one ray from the center of the pixel/bin
-    vec3 finalColor = traceRay(origin, direction);
+    vec3 finalColor = traceRays(origin, direction);
     
     gl_FragColor = vec4(finalColor, 1.0);
 }
